@@ -11,3 +11,5 @@ AceTimeISOWeek provides the transformation EpochDay<>ISOweek, and is Epoch indep
 The ISOYear can be different from current year in the first or last week. We make use of the definition that ‘Monday is the first day of the week’. And we make use of the definition that ‘the first week is the week with 4 days’, which is 04-Jan and the first Thursday. If you need to do a range check for the input ISOWeek, 28-dec of a year is always in the last week, and tells if there are 52 or 53 weeks.
 
 The ClockSimulator example shows how to display the datestring including ISO Week number. The ValidationISOWeek example just creates a CSV output, that can be validated with Excel or any other software you like.
+
+Tested only on Arduino Nano v3.0 ATmega328 5V
