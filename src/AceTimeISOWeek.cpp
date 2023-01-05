@@ -45,12 +45,12 @@ int32_t JanFour(int16_t ISOYear_I) {  // Jan-04-ISOYear DateEpoch
   return (LocalDate::forComponents(ISOYear_I, 1, 4).toEpochDays());
 }
 
-// Day number in de ISOYear, Internally only, range [0..370]
+// Day number in the ISOYear, Internally only, range [0..370]
 int16_t EpochToISOYearDay(int32_t EpochDays_I, int32_t JanFour_I) {
   return (EpochDays_I - JanFour_I + EpochToISOWeekDay(JanFour_I) - 1);
 }
 
-// Convert Day number in de ISOYear to ISOWeek number, range [1..53]
+// Convert Day number in the ISOYear to ISOWeek number, range [1..53]
 uint8_t ISOYearDayToISOWeek(int16_t ISOYearDay_I) {
   return ((ISOYearDay_I / 7) + 1);
 }
@@ -63,7 +63,7 @@ int32_t ISODayToEpoch(int16_t ISOYear_I, uint8_t ISOWeek_I, uint8_t ISOWeekDay_I
   return (ISOYearDay_I + JanFour_I - EpochToISOWeekDay(JanFour_I) + 1);
 }
 
-// Day number in de ISOYear, reverse Internally only, range [0..370]
+// Day number in the ISOYear, reverse Internally only, range [0..370]
 int16_t ISODayToISOYearDay(uint8_t ISOWeek_I, uint8_t ISOWeekday_I) {
   return (((ISOWeek_I - 1) * 7) + ISOWeekday_I - 1);
 }
