@@ -14,11 +14,12 @@ uint8_t EpochToISOWeek(int32_t EpochDays_I) {                                   
 }
 
 
-// This is the most important formula for a correct calculation, needs validation for each Date-Library !!
+// This is the most important formula for a correct calculation, needs validation for each date library !!
 // convert Date to ISO8601 WeekDay number, range [Mon=1]..[Sun=7].
-// Correct the output, if needed, here
 uint8_t EpochToISOWeekDay(int32_t EpochDays_I) {
-  return (LocalDate::forEpochDays(EpochDays_I).dayOfWeek());
+  uint8_t ISOWeekDay_I = (LocalDate::forEpochDays(EpochDays_I).dayOfWeek());
+  // Correct the output, if needed for used date library, here  
+  return ISOWeekDay_I;
 }
 
 // Year for closest Thursday
