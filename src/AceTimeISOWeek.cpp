@@ -4,12 +4,12 @@
 // range EpochYear ± 50, depending on datelibrary settings in AceTime.
 // Heavy calculation, do only once each new minute
 uint8_t EpochTimeToISOWeek(acetime_t EpochSeconds_I) {                              // range [1..53]
-  return EpochToISOWeek(LocalDate::forEpochSeconds(EpochSeconds_I).toEpochDays());  //convert DateTime to Date, then ISOWeek
+  return EpochDaysToISOWeek(LocalDate::forEpochSeconds(EpochSeconds_I).toEpochDays());  //convert DateTime to Date, then ISOWeek
 }
 
 
 // useful for displaying the ISO8601 WeekNumber on a clock that runs with EpochDays.
-uint8_t EpochToISOWeek(int32_t EpochDays_I) {                                                          // range [1..53]
+uint8_t EpochDaysToISOWeek(int32_t EpochDays_I) {                                                          // range [1..53]
   return ISOYearDayToISOWeek(EpochToISOYearDay(EpochDays_I, (JanFour(EpochToISOYear(EpochDays_I)))));  //convert Date to ISOWeek
 }
 
