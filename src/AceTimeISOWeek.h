@@ -13,7 +13,7 @@
 using namespace ace_time;
 
 uint8_t EpochTimeToISOWeek(acetime_t EpochSeconds_I);
-uint8_t EpochToISOWeek(int32_t EpochDays_I);
+uint8_t EpochDaysToISOWeek(int32_t EpochDays_I);
 uint8_t EpochToISOWeekDay(int32_t EpochDays_I);
 int16_t EpochToISOYear(int32_t EpochDays_I);
 int32_t JanFour(int16_t ISOYear_I);
