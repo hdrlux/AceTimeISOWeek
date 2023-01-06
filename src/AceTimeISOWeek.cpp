@@ -32,6 +32,7 @@ uint8_t EpochDaysToISOWeek(int32_t EpochDays_I) {  // range [1..53]
 uint8_t EpochToISOWeekDay(int32_t EpochDays_I) {
   uint8_t ISOWeekDay_I = (LocalDate::forEpochDays(EpochDays_I).dayOfWeek());
   // Correct the output, if needed for used date library, here  
+  // EXAMPLE: return (1 + ((ISOWeekDay_I + 5) % 7)); // correction for range [Sun=1]..[Sat=7]
   return ISOWeekDay_I;
 }
 
