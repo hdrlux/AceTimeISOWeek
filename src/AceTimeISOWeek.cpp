@@ -4,7 +4,7 @@
  * v0.1 2023-01
  * output validated for Year 2020-2100, code could use some optimization
  *
- * All functions return a integer, 
+ * All functions return an integer.
  * All parts with 'LocalDate::' use the AceTime library.
  */
 
